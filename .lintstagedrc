@@ -7,6 +7,7 @@
     "npm run lint:prettier:write"
   ],
   "*.css": [
-    "npm run lint:prettier:write"
+    "npm run lint:prettier:write",
+    "npm run lint:stylelint:write"
   ]
 }
