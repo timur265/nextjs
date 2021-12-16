@@ -1,5 +1,7 @@
 export enum CurrencyActionTypes {
   FETCH_CURRENCIES = "FETCH_CURRENCIES",
+  FETCH_CURRENCY_DATA = "FETCH_CURRENCY_DATA",
+  SET_CURRENCY_DATA = "SET_CURRENCY_DATA",
 }
 
 export interface IСurrency {
@@ -12,14 +14,37 @@ export interface IСurrency {
   circulating_supply: number;
   total_supply: number;
   max_supply: number;
+  last_updated: string;
+  quote: {
+    USD: {
+      fully_diluted_market_cap: number;
+      last_updated: string;
+      price: number;
+      volume_24h: number;
+      volume_change_24h: number;
+    };
+  };
 }
-interface FetchAction {
+interface FetchCurrenciesAction {
   type: CurrencyActionTypes.FETCH_CURRENCIES;
   payload: IСurrency[];
 }
 
-export interface CurrencyState {
-  currencies: IСurrency[];
+interface FetchCurrencyAction {
+  type: CurrencyActionTypes.FETCH_CURRENCY_DATA;
+  payload: { id: number; last_updated: string };
 }
 
-export type CurrencyAction = FetchAction;
+interface SetCurrencyAction {
+  type: CurrencyActionTypes.SET_CURRENCY_DATA;
+  payload: [];
+}
+export interface CurrencyState {
+  currencies: IСurrency[];
+  currencyData: any[];
+}
+
+export type CurrencyAction =
+  | FetchCurrenciesAction
+  | FetchCurrencyAction
+  | SetCurrencyAction;
