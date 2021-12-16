@@ -32,7 +32,17 @@ interface FetchCurrenciesAction {
 
 interface FetchCurrencyAction {
   type: CurrencyActionTypes.FETCH_CURRENCY_DATA;
-  payload: { id: number; last_updated: string };
+  payload: {
+    id: number;
+    last_updated: string;
+    quote: {
+      USD: {
+        price: number;
+      };
+    };
+    dates: any[];
+    prices: any[];
+  };
 }
 
 interface SetCurrencyAction {
@@ -41,7 +51,11 @@ interface SetCurrencyAction {
 }
 export interface CurrencyState {
   currencies: IСurrency[];
-  currencyData: any[];
+  currencyData: {
+    data: any[];
+    dates: any[];
+    prices: any[];
+  };
 }
 
 export type CurrencyAction =
