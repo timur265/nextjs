@@ -1,0 +1,21 @@
+@import "/styles/variables.scss";
+
+.navContainer {
+  background-color: $color-bg-navbar;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .navLink {
+    display: inline-block;
+    padding: 10px 20px;
+    color: $color-text-contrast;
+    font-size: 16px;
+    text-decoration: none;
+  
+    &:hover,  &:active {
+      background-color: $color-bg-active-link-navbar;
+    } 
+  }
+}
+

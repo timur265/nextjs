@@ -1,0 +1,13 @@
+{
+  "*.(js|jsx|ts|tsx)": [
+    "npm run lint:prettier:write",
+    "npm run lint:eslint:write"
+  ],
+  "*.json": [
+    "npm run lint:prettier:write"
+  ],
+  "*.css": [
+    "npm run lint:prettier:write",
+    "npm run lint:stylelint:write"
+  ]
+}

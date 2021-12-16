@@ -1,19 +1,51 @@
 {
+  "version": "1.0.0",
   "name": "test-ex",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:check": "npm run lint:prettier:check . && npm run lint:tsc:check && npm run lint:eslint:check . && npm run lint:stylelint:check .",
+    "lint:write": "npm run lint:prettier:write . && npm run lint:eslint:write . && npm run lint:stylelint:write .",
+    "lint:prettier:check": "prettier --check",
+    "lint:prettier:write": "prettier --write",
+    "lint:tsc:check": "tsc --noEmit",
+    "lint:eslint:check": "eslint --ext .ts,.tsx",
+    "lint:eslint:write": "eslint --ext .ts,.tsx --fix",
+    "lint:stylelint:check": "stylelint",
+    "lint:stylelint:write": "stylelint --fix"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@types/react-redux": "^7.1.20",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "axios": "^0.24.0",
+    "chart.js": "^3.6.2",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.1.0",
     "next": "12.0.7",
+    "next-redux-wrapper": "^6.0.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-chartjs-2": "^4.0.0",
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.45.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/node": "^16.11.12",
+    "@types/react": "^17.0.37",
     "eslint": "8.4.1",
-    "eslint-config-next": "12.0.7"
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.5.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "typescript": "^4.5.3"
   }
 }
