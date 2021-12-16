@@ -17,6 +17,7 @@
     "lint:stylelint:write": "stylelint --fix"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@types/react-redux": "^7.1.20",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "axios": "^0.24.0",
@@ -29,7 +30,8 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
-    "sass": "^1.45.0"
+    "sass": "^1.45.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "^16.11.12",
