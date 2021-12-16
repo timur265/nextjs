@@ -1,0 +1,20 @@
+@import "/styles/variables.scss";
+
+
+.header {
+  font-weight: bold !important;
+}
+
+.MuiTableHead-root {
+  .MuiTableRow-head {
+    th {
+      font-weight: bold;
+    }
+  }
+}
+.row {
+  cursor: pointer;
+  &:hover {
+    background-color: $color-currency-row;
+  }
+}
