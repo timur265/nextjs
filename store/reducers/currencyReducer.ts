@@ -46,7 +46,7 @@ export default function (
         10000;
       const localStorageCurrencyData = localStorage.getItem("currencyData")
         ? JSON.parse(localStorage.getItem("currencyData"))
-        : state.currencyData;
+        : [];
       const currencyData = [action.payload, ...localStorageCurrencyData];
       const filteredCurrencyData = currencyData.filter((value) => {
         return value.id == action.payload.id;
